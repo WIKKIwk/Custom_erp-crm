@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     unzip \
     libpq-dev \
-    libc-client-dev \
     libicu-dev \
     zlib1g-dev \
     libpng-dev \

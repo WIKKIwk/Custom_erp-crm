@@ -10,6 +10,7 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\ServiceProvider;
+use App\Services\Cache\FileCache;
 use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,8 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(Cache::class, function () {
-            return new RedisCache();
+        $this->app->bind(\App\Services\Cache\Cache::class, function () {
+            return new FileCache();
         });
     }
 
